@@ -35,7 +35,6 @@ $(document).ready(function(){
 	};
 
 	function photoCaptureSuccess(stream){
-		console.dir(stream)
 		video.srcObject = stream;
 	}
 
