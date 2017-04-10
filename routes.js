@@ -19,7 +19,7 @@ router.post('/signup', function(req, res) {
 			return next(err);
 		}
 
-		res.redirect('/');
+		res.redirect('/camera');
 
 	});
 });
@@ -29,12 +29,17 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/login', passport.authenticate('local'), function(req, res) {
-  res.redirect('/');
+  res.redirect('/camera');
 });
 
 router.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
+});
+
+//Camera page routes
+router.get('/camera', function(req, res) {
+	res.render('camera', {user: req.user});
 });
 
 
