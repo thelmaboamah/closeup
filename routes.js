@@ -2,6 +2,8 @@ var passport = require('passport');
 var db = require('./models');
 var router = require('express').Router();
 
+
+//Sign up and login routes
 router.get('/', function(req, res) {
 	res.render('index', {user: req.user});
 })
