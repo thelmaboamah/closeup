@@ -6,11 +6,11 @@ var router = require('express').Router();
 //Sign up and login routes
 router.get('/', function(req, res) {
 	res.render('index', {user: req.user});
-})
+});
 
 router.get('/signup', function(req, res) {
-	res.render('signup')
-})
+	res.render('signup', {user: req.user})
+});
 
 router.post('/signup', function(req, res) {
 	db.User.register(new db.User({username: req.body.username}), req.body.password, function(err) {
